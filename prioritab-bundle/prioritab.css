@@ -150,11 +150,9 @@ body {
 }
 
 .priorities {
+  float: left;
   width: 30%;
-  display: inline-block;
-  vertical-align: top;
-  margin: .5rem;
-  animation: fadeInUp 1s both;
+  margin: .5rem
 }
 
 #week-pris {

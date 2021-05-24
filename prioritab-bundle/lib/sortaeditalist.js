@@ -157,7 +157,8 @@ $(function () {
 
   // Sort todo
   $itemListLeft.sortable({
-    revert: true,
+    revert: false,
+    scrollSpeed: 10,
     connectWith: ['#shown-items-mid, #shown-items-right'],
     stop: function () {
       $.publish('/regenerate-list/', []);
@@ -165,7 +166,8 @@ $(function () {
   });
 
   $itemListMid.sortable({
-    revert: true,
+    revert: false,
+    scrollSpeed: 10,
     connectWith: ['#shown-items-left, #shown-items-right'],
     stop: function () {
       $.publish('/regenerate-list/', []);
@@ -173,7 +175,8 @@ $(function () {
   });
 
   $itemListRight.sortable({
-    revert: true,
+    revert: false,
+    scrollSpeed: 10,
     connectWith: ['#shown-items-left, #shown-items-mid'],
     stop: function () {
       $.publish('/regenerate-list/', []);
@@ -183,7 +186,7 @@ $(function () {
   // Edit and save todo
   $(".todo-text").inlineEdit({
     buttons: '',
-    cancelOnBlur: true,
+    saveOnBlur: true,
     save: function (e, data) {
       var newTodoID = $(this).parent().attr('id'),
         objToSave = {};
